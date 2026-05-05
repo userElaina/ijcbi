@@ -11,3 +11,5 @@ Because [**IJCAI**](https://www.ijcai.org/) was downgraded from a [CCF-A](https:
 ## greasyfork
 
 [https://greasyfork.org/en/scripts/576698-ijcai-ijcbi-dot-org](https://greasyfork.org/en/scripts/576698-ijcai-ijcbi-dot-org)
+
+![1](./show1.png)
