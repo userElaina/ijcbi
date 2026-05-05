@@ -32,11 +32,8 @@
 
     function replaceText(node) {
         if (shouldSkip(node)) return;
-
-        if (node.nodeType === Node.TEXT_NODE) {
-            while (/ijcai/gi.test(node.nodeValue)) {
-                node.nodeValue = node.nodeValue.replace('ijcai', 'ijcbi').replace('Ijcai', 'Ijcbi').replace('IJCAI', 'IJCBI');
-            }
+        while (/ijcai/gi.test(node.nodeValue)) {
+            node.nodeValue = node.nodeValue.replace('ijcai', 'ijcbi').replace('Ijcai', 'Ijcbi').replace('IJCAI', 'IJCBI');
         }
     }
 
@@ -53,6 +50,9 @@
     }
 
     walk(document.body);
+    while (/ijcai/gi.test(document.title)) {
+        document.title = document.title.replace('ijcai', 'ijcbi').replace('Ijcai', 'Ijcbi').replace('IJCAI', 'IJCBI');
+    }
 
     const observer = new MutationObserver(mutations => {
         for (let mutation of mutations) {
