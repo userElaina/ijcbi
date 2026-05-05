@@ -33,6 +33,7 @@
     function replaceText(node) {
         if (shouldSkip(node)) return;
         while (/a/gi.test(node.nodeValue)) {
+            if (node.nodeValue.indexOf('@') !== -1) { return; }
             node.nodeValue = node.nodeValue.replace('a', 'b').replace('A', 'B');
         }
     }
