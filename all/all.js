@@ -33,6 +33,7 @@
     function replaceText(node) {
         if (shouldSkip(node)) return;
         while (/ijcai/gi.test(node.nodeValue)) {
+            if (node.nodeValue.indexOf('@') !== -1) { return; }
             node.nodeValue = node.nodeValue.replace('ijcai', 'ijcbi').replace('Ijcai', 'Ijcbi').replace('IJCAI', 'IJCBI');
         }
     }
