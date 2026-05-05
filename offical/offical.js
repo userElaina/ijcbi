@@ -69,15 +69,16 @@
     });
 
     if (window.location.href.indexOf("2026.ijcai.org") > -1) {
+        let pth_str = 'https://raw.githubusercontent.com/userElaina/ijcbi/refs/heads/main/offical/ijcbi-2026.png';
         let logo = document.querySelector("img[class='custom-logo']");
         if (logo) {
-            logo.src = 'https://raw.githubusercontent.com/userElaina/ijcbi/refs/heads/main/offical/ijcbi-2026.png';
-            logo.srcset = 'https://raw.githubusercontent.com/userElaina/ijcbi/refs/heads/main/offical/ijcbi-2026.png';
+            logo.src = pth_str;
+            logo.srcset = pth_str;
         }
         let logo2 = document.querySelector("img[class='alignnone wp-image-1952']");
         if (logo2) {
-            logo2.src = 'https://raw.githubusercontent.com/userElaina/ijcbi/refs/heads/main/offical/ijcbi-2026.png';
-            logo2.srcset = 'https://raw.githubusercontent.com/userElaina/ijcbi/refs/heads/main/offical/ijcbi-2026.png';
+            logo2.src = pth_str;
+            logo2.srcset = pth_str;
         }
     }
 
