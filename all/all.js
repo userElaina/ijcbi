@@ -1,9 +1,10 @@
 // ==UserScript==
-// @name IJCBI
+// @name IJCBI IJCAI
 // @namespace https://github.com/userElaina/ijcbi
 // @version 2026.05.05.01
 // @description Replace IJCAI with IJCBI in the text.
 // @author userElaina
+// @license MIT
 // @match *://*/*
 // @icon https://raw.githubusercontent.com/userElaina/ijcbi/refs/heads/main/ijcbi.png
 // @grant none
