@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name IJCBI IJCAI
+// @name IJCAI IJCBI
 // @namespace https://github.com/userElaina/ijcbi
-// @version 2026.05.05.01
+// @version 2026.05.05.02
 // @description Replace IJCAI with IJCBI in the text.
 // @author userElaina
 // @license MIT
@@ -34,10 +34,8 @@
         if (shouldSkip(node)) return;
 
         if (node.nodeType === Node.TEXT_NODE) {
-            if (/ijcai/gi.test(node.nodeValue)) {
-                node.nodeValue = node.nodeValue.replace('ijcai', 'ijcbi');
-                node.nodeValue = node.nodeValue.replace('Ijcai', 'Ijcbi');
-                node.nodeValue = node.nodeValue.replace('IJCAI', 'IJCBI');
+            while (/ijcai/gi.test(node.nodeValue)) {
+                node.nodeValue = node.nodeValue.replace('ijcai', 'ijcbi').replace('Ijcai', 'Ijcbi').replace('IJCAI', 'IJCBI');
             }
         }
     }
