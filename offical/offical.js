@@ -1,11 +1,11 @@
 // ==UserScript==
-// @name IJCAI IJCBI
+// @name IJCAI IJCBI dot org
 // @namespace https://github.com/userElaina/ijcbi
-// @version 2026.05.05.02
-// @description Replace IJCAI with IJCBI in the text.
+// @version 2026.05.05.01
+// @description Replace A with B in the text on the IJCAI official website.
 // @author userElaina
 // @license MIT
-// @match *://*/*
+// @match *://*.ijcai.org/*
 // @icon https://raw.githubusercontent.com/userElaina/ijcbi/refs/heads/main/ijcbi.png
 // @grant none
 // ==/UserScript==
@@ -32,11 +32,8 @@
 
     function replaceText(node) {
         if (shouldSkip(node)) return;
-
-        if (node.nodeType === Node.TEXT_NODE) {
-            while (/ijcai/gi.test(node.nodeValue)) {
-                node.nodeValue = node.nodeValue.replace('ijcai', 'ijcbi').replace('Ijcai', 'Ijcbi').replace('IJCAI', 'IJCBI');
-            }
+        while (/a/gi.test(node.nodeValue)) {
+            node.nodeValue = node.nodeValue.replace('a', 'b').replace('A', 'B');
         }
     }
 
@@ -53,6 +50,9 @@
     }
 
     walk(document.body);
+    while (/a/gi.test(document.title)) {
+        document.title = document.title.replace('a', 'b').replace('A', 'B');
+    }
 
     const observer = new MutationObserver(mutations => {
         for (let mutation of mutations) {

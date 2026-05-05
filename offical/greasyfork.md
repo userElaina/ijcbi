@@ -1,5 +1,3 @@
-Replace `IJCAI` with `IJCBI` in the text.
-
-Matches all websites.
+Replace `A` with `B` in the text on the [**IJCAI**](https://www.ijcai.org/) official website.
 
 [GitHub](https://github.com/userElaina/ijcbi)
