@@ -82,4 +82,24 @@
         }
     }
 
+    if (window.location.href.startsWith('https://www.ijcai.org/')) {
+        let logo = document.getElementById("logo");
+        if (logo) {
+            if (logo.childElementCount > 0) {
+                if (logo.children[0].childElementCount > 0) {
+                    logo.childNodes[0].childNodes[0].src = 'https://raw.githubusercontent.com/userElaina/ijcbi/refs/heads/main/offical/ijcbi-logo.png';
+                }
+            }
+        }
+        document.querySelectorAll("img").forEach(img => {
+            if (img.src.includes("sponsors")) {
+                if (img.src.includes("huawei")) {
+                    img.src = 'https://raw.githubusercontent.com/userElaina/ijcbi/refs/heads/main/offical/hubwei.png';
+                } else if (img.src.includes("baidu")) {
+                    img.src = 'https://raw.githubusercontent.com/userElaina/ijcbi/refs/heads/main/offical/bbidu.png';
+                }
+            }
+        });
+    }
+
 })();
