@@ -14,6 +14,8 @@
 (function () {
     'use strict';
 
+    const emailRegex = /[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/g;
+
     const SKIP_TAGS = new Set([
         'IMG', 'INPUT', 'TEXTAREA', 'CODE', 'PRE', 'SCRIPT', 'STYLE',
         'NOSCRIPT', 'OPTION', 'META',
@@ -32,10 +34,17 @@
 
     function replaceText(node) {
         if (shouldSkip(node)) return;
-        while (/a/gi.test(node.nodeValue)) {
-            if (node.nodeValue.indexOf('@') !== -1) { return; }
-            node.nodeValue = node.nodeValue.replace('a', 'b').replace('A', 'B');
+        let emails = [];
+        let text = node.nodeValue.replace(emailRegex, match => {
+            const idx = emails.length;
+            emails.push(match);
+            return `__IJCBI_EM4IL_${idx}__`;
+        });
+        while (/a/gi.test(text)) {
+            text = text.replace('a', 'b').replace('A', 'B');
         }
+        text = text.replace(/__IJCBI_EM4IL_(\d+)__/g, (match, idx) => emails[idx]);
+        node.nodeValue = text;
     }
 
     function walk(node) {
