@@ -40,7 +40,7 @@
             emails.push(match);
             return `__IJCBI_EM4IL_${idx}__`;
         });
-        while (/a/gi.test(text)) {
+        while (/ijcai/gi.test(text)) {
             text = text.replace('ijcai', 'ijcbi').replace('Ijcai', 'Ijcbi').replace('IJCAI', 'IJCBI');
         }
         text = text.replace(/__IJCBI_EM4IL_(\d+)__/g, (match, idx) => emails[idx]);
